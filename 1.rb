@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 
-INPUT = File.read('./1.input').strip.split("\n").map(&:to_i)
+INPUT = File.readlines('1.input', chomp: true).map(&:to_i)
 
 def report_repair(input, count: 2, expected_sum: 2020)
   input.permutation(count).find { |result| result.sum == expected_sum }.inject(:*)

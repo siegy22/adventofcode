@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 
-INPUT = File.read('./2.input').strip.split("\n")
+INPUT = File.readlines('2.input', chomp: true)
 
 class Password
   def self.parse(str)
