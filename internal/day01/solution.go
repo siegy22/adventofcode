@@ -2,9 +2,9 @@ package day01
 
 import (
 	"fmt"
+	"slices"
 	"strconv"
 	"strings"
-	"slices"
 )
 
 func SolveDay1(input string) int {
@@ -82,4 +82,3 @@ func SimilarityScore(arr []int, elem int) int {
 	}
 	return count * elem
 }
-

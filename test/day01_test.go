@@ -2,8 +2,8 @@ package day01_test
 
 import (
 	"github.com/siegy22/adventofcode/internal/day01"
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestSolveDay1(t *testing.T) {
