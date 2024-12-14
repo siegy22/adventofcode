@@ -1,0 +1,82 @@
+#!/bin/ruby
+
+(1..24).each do |num|
+  prefixed_num = "%02d" % num
+  next if File.directory?("internal/day#{prefixed_num}")
+  system "mkdir -p internal/day#{prefixed_num}"
+  system "mkdir -p cmd/day#{prefixed_num}"
+  File.write("input/day#{prefixed_num}.txt", "")
+
+  File.write "internal/day#{prefixed_num}/solution.go", <<GO
+package day#{prefixed_num}
+
+import (
+	// "strings"
+	// "fmt"
+)
+
+func Solve(input string) (total int) {
+  
+	return total
+}
+
+func SolvePart2(input string) (total int) {
+
+	return total
+}
+
+GO
+
+  File.write "cmd/day#{prefixed_num}/main.go", <<GO
+package main
+
+import (
+	"fmt"
+	"log"
+	"os"
+	"github.com/siegy22/adventofcode/internal/day#{prefixed_num}"
+)
+
+func main() {
+	inputFile := "../../input/day#{prefixed_num}.txt"
+	input, err := os.ReadFile(inputFile)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Solve the problem
+	result := day#{prefixed_num}.Solve(string(input))
+	fmt.Println("Solution for Day #{num}:", result)
+
+	result2 := day#{prefixed_num}.SolvePart2(string(input))
+	fmt.Println("Solution for Day #{num} part 2:", result2)
+}
+GO
+
+  File.write "test/day#{prefixed_num}_test.go", <<GO
+package aoc_test
+
+import (
+	"github.com/siegy22/adventofcode/internal/day#{prefixed_num}"
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
+
+func TestSolveDay#{num}(t *testing.T) {
+	input := ""
+	expected := 0
+	actual := day#{prefixed_num}.Solve(input)
+
+	assert.Equal(t, expected, actual)
+}
+
+func TestSolveDay#{num}Part2(t *testing.T) {
+	input := ""
+	expected := 0
+	actual := day#{prefixed_num}.SolvePart2(input)
+
+	assert.Equal(t, expected, actual)
+}
+GO
+
+end
