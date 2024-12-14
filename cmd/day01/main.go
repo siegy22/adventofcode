@@ -2,16 +2,15 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
-	// "os"
+	"os"
 	"github.com/siegy22/adventofcode/internal/day01"
 )
 
 func main() {
 	// Read input from file (e.g., input/day01.txt)
 	inputFile := "../../input/day01.txt"
-	input, err := ioutil.ReadFile(inputFile)
+	input, err := os.ReadFile(inputFile)
 	if err != nil {
 		log.Fatal(err)
 	}
