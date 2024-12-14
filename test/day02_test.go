@@ -1,4 +1,4 @@
-package day01_test
+package aoc_test
 
 import (
 	"github.com/siegy22/adventofcode/internal/day02"
