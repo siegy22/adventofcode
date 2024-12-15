@@ -7,8 +7,17 @@ import (
 )
 
 func TestSolveDay4(t *testing.T) {
-	input := ""
-	expected := 0
+	input := `MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX`
+	expected := 18
 	actual := day04.Solve(input)
 
 	assert.Equal(t, expected, actual)
